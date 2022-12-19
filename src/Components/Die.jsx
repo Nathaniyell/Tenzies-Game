@@ -1,7 +1,15 @@
 import React from 'react'
 
 const Die = (props)=>{
-  return <button className='dice-face' style={{props.isheld && background: '#59E391'}}>
+const styles = {
+  backgroundColor: props.isheld ? '#59E391' : '#fff'
+}
+  
+  return <button 
+           className='dice-face' 
+           style={styles}
+           onClick={()=>props.clickHandler(props.id)}
+           >
     {props.value}
   </button>
 }
