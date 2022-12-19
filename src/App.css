@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+body{
+  padding: 20px;
+  background-color:  #0B2434;
+ }
+
+main{
+  height: 350px;
+  background: #f5f5f5;
+  max-width: 800px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+main section{
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+  /*   specify the row as auto 2wice and also specify the column         all at once */
+    grid-gap: 20px;
+  padding: 10px;
+}
+.dice-face{
+    font-size: 2rem;
+    background: #fff;
+    border: none;
+    padding: 10px 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  cursor: pointer;
+}
+.roll{
+    font-size: 1.5rem;
+    background: dodgerblue;
+    color: #fff;
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 6px;
+    background-color: #5035FF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+/*     margin-top: 20px; */
+}
+.roll:focus {
+    outline: none;
+}
+
+.roll:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+/*   this makes the button look like it is going inside when           clicked */
+}
