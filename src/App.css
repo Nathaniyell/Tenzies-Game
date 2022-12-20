@@ -78,10 +78,11 @@ main section{
   text-align: center;
   display: grid;
   place-items: center;
-  transform: translateY(-100%)
+  transform: translateY(-100%);
+  transition: all .4s ease-in-out;
 }
 .show-win{
-  transform: translateY(0)
+  transform: translateY(0);
 }
 @media(max-width: 1200px){
   body{
