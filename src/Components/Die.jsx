@@ -2,7 +2,8 @@ import React from 'react'
 
 const Die = (props)=>{
 const styles = {
-  backgroundColor: props.isheld ? '#59E391' : '#fff'
+  backgroundColor: props.isheld ? '#52050A' : '#fff',
+  color: props.isheld ? '#fff' : '#000'
 }
   
   return <button 

@@ -5,14 +5,18 @@
     font-family: 'Karla', sans-serif;
 }
 body{
+  height: 100vh;
   padding: 20px;
   background-color:  #0B2434;
+  display: flex;
+  align-items: center;
+  justify-content: center;
  }
 
 main{
-  height: 350px;
+  height: 450px;
   background: #f5f5f5;
-  max-width: 800px;
+  max-width: 600px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -29,10 +33,9 @@ header{
 
 .instructions {
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    margin-top: 0;
-    text-align: center;
-}
+      margin: 10px auto 0;
+  width: 80%;
+   }
 main section{
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
@@ -58,7 +61,7 @@ main section{
     width: 120px;
     border: none;
     border-radius: 6px;
-    background-color: #5035FF;
+    background-color: green;
     cursor: pointer;
 }
 .roll:focus {
@@ -68,4 +71,20 @@ main section{
 .roll:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 /*   this makes the button look like it is going inside when           clicked */
+}
+.win{
+  background: red;
+  color: #fff;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  transform: translateY(-100%)
+}
+.show-win{
+  transform: translateY(0)
+}
+@media(max-width: 1200px){
+  body{
+    height: 50vh;
+  }
 }

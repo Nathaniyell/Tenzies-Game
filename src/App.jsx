@@ -7,6 +7,7 @@ import Die from './Components/Die'
 export default function App() {
   const [dice, setDice] = useState(allNewDice())
   const [tenzies, setTenzies] = useState(false)
+  const [count, setCount] = useState(0)
 
   useEffect(()=>{
     console.log("Dice state changed")
@@ -18,7 +19,7 @@ export default function App() {
     const allSameValue = dice.every(die => die.value === firstValue)
     if(allHeld && allSameValue){
       setTenzies(true)
-      console.log('You Won')
+      console.log(`You won with ${count} rolls`)
     }
   }, [dice])
 
@@ -46,12 +47,20 @@ export default function App() {
 
 
   function rollDice() {
-    //map through the dice array and check if any of the isheld property is true, return that die as is, if it is false, run the function that creates a new dice
+  setCount(count + 1)
+    
+     //setDice(allNewDice())
+    //generate new numbers and save them to state
+    if(!tenzies){
+      //map through the dice array and check if any of the isheld property is true, return that die as is, if it is false, run the function that creates a new dice
     setDice(oldDice => oldDice.map(die => {
       return die.isHeld ? die : createNewDie()
     }))
-    //setDice(allNewDice())
-    //generate new numbers and save them to state
+    }else{
+      setTenzies(false)
+      setDice(allNewDice())
+    }
+   
   }
   function holdDice(id) {
     setDice(oldDice => oldDice.map(die => {
@@ -73,7 +82,9 @@ export default function App() {
     //The confetti is a cool animation component by react that displays when the game is won
     <main>
       {tenzies && <Confetti />}
-      
+  {tenzies && <div className={`win ${tenzies && 'show-win'}`}> 
+  <h1>Hurray!!! You WON with {count} Rolls</h1>
+  </div>}
       <header>
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p></header>
